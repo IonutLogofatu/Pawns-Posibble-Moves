@@ -173,7 +173,7 @@ class frmChessBoard extends JFrame implements MouseListener
     private boolean isMoveValidWhite(int y, int x, int xInit, int yInit)
     {
         System.out.println(y + " " + x + " !!! " + yInit + "  " + xInit);
-        if((strChessBoard[y][x].equals("  ") || (strChessBoard[y][x].equals("PB"))) && ((x == xInit-1 || x == xInit+1 || x == xInit) && y == (yInit -1))) {
+        if((strChessBoard[y][x].equals("  ") && (x == xInit &&  y == (yInit -1))) || (strChessBoard[y][x].equals("PB") && ((x == xInit-1 || x == xInit+1 ) && y == (yInit -1)))){
             return true;
         }else {
             return false;
@@ -181,7 +181,7 @@ class frmChessBoard extends JFrame implements MouseListener
     }
     private boolean isMoveValidBlack(int y, int x, int xInit, int yInit)
     {
-        if((strChessBoard[y][x].equals("  ") || strChessBoard[y][x].equals("PW")) && ((x == xInit-1 || x == xInit+1 || x == xInit) && y == yInit +1)) {
+         if((strChessBoard[y][x].equals("  ") && (x == xInit &&  y == (yInit +1)))|| (strChessBoard[y][x].equals("PW") && ((x == xInit-1 || x == xInit+1 || x == xInit) && y == yInit +1))) {
             return true;
         }
         return false;
